@@ -1,0 +1,14 @@
+
+{
+	"RealNumber"
+	is_a: [ Number ]
+
+	value: Fraction | Decimal | ...
+}
+
+{
+	"NaturalNumber"
+	is_a: [ Number ]
+}
+
+

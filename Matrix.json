@@ -1,0 +1,22 @@
+{
+	"Matrix"
+
+	num_rows: PositiveNaturalNumber
+	num_cols: PositiveNaturalNumber
+
+	type: NumberType
+	
+	entries: TwoDimensionalGrid(type)
+}
+
+
+
+{
+	"RealMatrix"
+
+	is_a: [
+		Matrix(RealNumber)
+	]
+}
+
+

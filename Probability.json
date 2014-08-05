@@ -1,0 +1,51 @@
+{
+	"Distribution"
+
+	is_a: Function(
+		input_type = object_type,
+		output_type = RealNumber,
+	)
+	// Should be a "Generalized Function" -- see http://en.wikipedia.org/wiki/Distribution_(mathematics)
+		
+	pdf: Function
+	cdf: Function
+}
+
+{
+	"Parametric Distribution"
+
+	is_a: Distribution
+	
+	pdf: Function(
+		input_type = object_type, // An implicit definition of a type
+		output_type = RealNumber,
+
+		range = RealInterval( [0, 1] )
+	)
+	
+	cdf: Function(
+		input_type = object_type,
+		output_type = RealNumber,
+
+		range = RealInterval( [0, 1] )
+	)
+
+	parameters: [ (variable1, Object1), ... ]
+}
+
+
+{
+	"Normal Distribution"
+
+	is_a: "Parametric Distribution"
+
+	dim: PositiveNaturalNumber
+	
+	parameters: [
+		( Variable(\mu), RealVector(dim) ),
+		( Variable(\sigma), RealPositiveDefiniteMatrix(dim, dim) )
+	]
+
+	pdf: Function(
+		fn = MathematicaDefinedFunction
+}

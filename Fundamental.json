@@ -1,0 +1,98 @@
+{
+    "Variable"
+    latex_symbol: string
+}
+
+{
+    "Enum"
+    // Special built-in thing?
+    value: // TODO
+}
+
+{
+    "Boolean"
+
+    is_a: Enum
+    
+    value: True | False
+}
+
+
+{
+    "Set",
+
+    type: Type,
+    
+    entries: { Type },
+
+    display: [
+	'{' + Type  + '}',
+	'A bunch of ' + Type
+    ]
+}
+
+
+
+{
+    "ConcreteSet",
+
+    is_a: Set
+
+    entries: { }
+
+}
+
+
+
+
+{
+    "Function"
+
+    is_a: "relation"
+
+    // Make a "relation constructor" out of this -- given a function, make a relation. (i.e. a subset of the cartesian product of the domain and range)
+    
+    domain: Set
+    range: Set
+
+    evaluate() :: ComputableFunction(input_type, output_type)
+}
+
+{
+    "Tuple"
+
+    type1: Object
+    type2: Object
+    
+    item1: InstanceOf(type1)
+    item2: InstanceOf(type2)
+}
+
+
+{
+    "ComputableFunction"
+
+    input_type: Object
+    output_type: Object
+
+    evaluate() :: input_type -> output_type: BlackBoxFunction
+    // TODO support different kinds of computable functions -- Mathematica expressions, etc.
+
+    {
+	"Cartesian product"
+
+	is_a: Set
+	
+	set1: Set(Type1)
+	set2: Set(Type2)
+
+	entries: Set( Tuple(type1=Type1, type2=Type2) )
+    }
+
+    {
+	"Expression"
+
+	is_a: [
+	    Object BinaryOperator Object
+	]
+    }

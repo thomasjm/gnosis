@@ -1,0 +1,18 @@
+/*
+  First entry is name of mathematical object.
+  Following entries are of the form
+
+  field: type
+
+  The field is a name, and the type is the type of some mathematical object.
+
+  Special fields are as follows:
+
+  is_a: [type]    // Represents an is_a relationship. Accepts a list of "parent" types.
+
+  { Type } // Denotes a set of objects of type Type
+  [ Type ] // Denotes a list of objects of type Type
+  
+  */
+
+

@@ -1,0 +1,16 @@
+{
+	"RealInterval"
+
+	start: RealNumber
+	end: RealNumber
+
+	left_inclusive: Boolean
+	right_inclusive: Boolean
+
+	__repr__: function() {
+		left_bracket = (left_inclusive == true) ? "[" : "(";
+		right_bracket = (right_inclusive == true) ? "]" : ")";
+
+		return left_bracket + start.repr() + "," + end.repr() + right_bracket;
+	}
+}

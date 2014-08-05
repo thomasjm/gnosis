@@ -1,0 +1,30 @@
+
+{
+    "Functional"
+
+    is_a: Function(
+	input_type: Object
+	output_type: Function
+    )
+}
+
+
+{
+    "Variation"
+
+    is_a: Functional
+
+    displacement_function: Function
+    input: Function
+
+    __repr__: function(self) {
+	return "\delta_" + self.displacement_function + "[" + self.Function + "]"
+    };
+
+    apply_definition() :: function(self) {
+	// Return an Expression object
+
+    };
+    
+    evaluate() :: input_type -> output_type : L
+}
