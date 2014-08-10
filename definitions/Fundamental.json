@@ -93,6 +93,6 @@
 	"Expression"
 
 	is_a: [
-	    Object BinaryOperator Object
+	   Object BinaryOperator Object
 	]
     }

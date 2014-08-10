@@ -1,0 +1,11 @@
+{
+	H \subseteq G
+	H is a Group
+	G is a Group
+	G.identity \elem H
+
+	=>
+
+
+	H is a SUBGROUP of G
+}

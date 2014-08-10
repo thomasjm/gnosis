@@ -1,0 +1,26 @@
+{
+	"Group"
+
+	supertypes: semigroup
+
+	*: BinaryFunction(self, self, self)
+		where
+			g1 * g2 == g3 => g1, g2, g3 \elem self
+			(g1 * g2) * g3 = g1 * (g2 * g3)
+			forall g <- self, E g' | ( g * g' = identity
+								     , g' * g = identity )
+
+	identity: e
+		where
+			e <- self
+			e * g = g
+			g * e = g
+}
+
+{
+	"AbelianGroup"
+
+	supertypes: group
+
+	* is commutative
+}
